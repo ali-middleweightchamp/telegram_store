@@ -1,0 +1,10 @@
+fastapi
+aiogram
+sqlalchemy
+pydantic
+pydantic_settings
+aiosqlite
+alembic
+openpyxl
+pillow
+babel

@@ -1,0 +1,27 @@
+electronics_bot/
+├── .env.example
+├── requirements.txt
+├── main.py                 # точка входа
+├── alembic.ini
+├── alembic/                # миграции
+├── data/                   # данные клиента (не в git)
+├── demo/                   # демо: shop.json, demo.xlsx, фото
+├── locales/                # переводы ru / uz
+└── app/
+    ├── config.py           # .env + shop.json
+    ├── database/
+    │   ├── db.py           # engine, sessionmaker, WAL
+    │   ├── models.py
+    │   └── requests.py     # запросы к базе
+    ├── services/
+    │   ├── orders.py       # создание заказа, статусы
+    │   ├── importer.py     # импорт Excel
+    │   ├── media.py        # сохранение и сжатие фото
+    │   └── backup.py
+    ├── bot/
+    │   ├── handlers/       # common, catalog, order, admin/
+    │   ├── keyboards/      # callbacks, reply, inline
+    │   ├── states/         # order, admin
+    │   ├── middlewares/    # db-сессия, пользователь, язык
+    │   └── filters/        # IsAdmin
+    └── api/                # v2: HTTP API для Mini App
