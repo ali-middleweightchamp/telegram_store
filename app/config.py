@@ -1,15 +1,14 @@
-from pydantic_settings import BaseSettings
+from pydantic_settings import BaseSettings, SettingsConfigDict
 from pydantic import SecretStr
 
 
 class Settings(BaseSettings):
+    model_config = SettingsConfigDict(env_file=".env", extra="ignore")
+
     bot_token: SecretStr
-    db_port: int
 
-    class Config():
-        env_file = ".env"
+settings = Settings() 
 
-config = Settings() 
 
 
 

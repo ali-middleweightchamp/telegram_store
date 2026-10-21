@@ -17,4 +17,3 @@ dp = Dispatcher()
 @dp.message(CommandStart())
 async def command_start(message: Message) -> None:
     await message.answer("Добро пожаловать в Electronics bot")
-
